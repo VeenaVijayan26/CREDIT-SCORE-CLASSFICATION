@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREDT SCORE CLASSFICATION</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    
+    <style>
+        body {
+    background: url('static/images/credit.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>CREDIT SCORE</h1>
+    
+            <form id="predictionForm" method="POST" action="/predict">
+                <table>
+                                        
+                    </tr>
+                        <td><label for="Age">Age</label></td>
+                        <td><input type="text" id="Age" name="Age"></td>
+                    </tr>
+                    
+                     <tr>
+                        <td><label for="Occupation">Occupation</label></td>
+                            <td>
+                                    <select id="Occupation" name="Occupation" required>
+                                        <option value="" disabled selected>Select Occupation</option>
+                                        <option value="Teacher">Teacher</option>
+                                        <option value="Doctor">Doctor</option>
+                                        <option value="Entrepreneur">Entrepreneur</option>
+                                        <option value="Media_Manager">Media Manager</option>
+                                        <option value="Mechanic">Mechanic</option>
+                                        <option value="Engineer">Engineer</option>
+                                        <option value="Accountant">Accountant</option>
+                                        <option value="Scientist">Scientist</option>
+                                        <option value="Manager">Manager</option>
+                                        <option value="Lawyer">Lawyer</option>
+                                        <option value="Writer">Writer</option>
+                                        <option value="Architect">Architect</option>
+                                        <option value="Developer">Developer</option>
+                                        <option value="Musician">Musician</option>
+                                        <option value="Journalist">Journalist</option>
+                                    </select>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Annual_Income">Annual Income</label></td>
+                        <td><input type="text" id="Annual_Income" name="Annual_Income" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Num_Bank_Accounts">Number of Bank Accounts</label></td>
+                        <td><input type="text" id="Num_Bank_Accounts" name="Num_Bank_Accounts" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Num_Credit_Card">Number of Credit Cards</label></td>
+                        <td><input type="text" id="Num_Credit_Card" name="Num_Credit_Card" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Interest_Rate">Interest Rate</label></td>
+                        <td><input type="text" id="Interest_Rate" name="Interest_Rate" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Num_of_Loan">Number of Loans</label></td>
+                        <td><input type="text" id="Num_of_Loan" name="Num_of_Loan" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Delay_from_due_date">Delay from Due Date (days)</label></td>
+                        <td><input type="text" id="Delay_from_due_date" name="Delay_from_due_date" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Num_of_Delayed_Payment">Number of Delayed Payments</label></td>
+                        <td><input type="text" id="Num_of_Delayed_Payment" name="Num_of_Delayed_Payment"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Changed_Credit_Limit">Changed Credit Limit</label></td>
+                        <td><input type="text" id="Changed_Credit_Limit" name="Changed_Credit_Limit" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Num_Credit_Inquiries">Number of Credit Inquiries</label></td>
+                        <td><input type="text" id="Num_Credit_Inquiries" name="Num_Credit_Inquiries" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Credit_Mix">Credit Mix</label></td>
+                        <td>
+                            <select id="Credit_Mix" name="Credit_Mix" >
+                                <option value="" disabled selected>Select Credit Mix</option>
+                                <option value="Good">Good</option>
+                                <option value="Standard">Average</option>
+                                <option value="Bad">Bad</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Outstanding_Debt">Outstanding Debt </label></td>
+                        <td><input type="text" id="Outstanding_Debt" name="Outstanding_Debt" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Credit_Utilization_Ratio">Credit Utilization Ratio </label></td>
+                        <td><input type="text" id="Credit_Utilization_Ratio" name="Credit_Utilization_Ratio" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Credit_History_Age">Credit History Age (months)</label></td>
+                        <td><input type="text" id="Credit_History_Age" name="Credit_History_Age" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Payment_of_Min_Amount">Payment of Minimum Amount</label></td>
+                        <td>
+                            <select id="Payment_of_Min_Amount" name="Payment_of_Min_Amount" >
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="NM">Yes</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Total_EMI_per_month">Total EMI per Month</label></td>
+                        <td><input type="text" id="Total_EMI_per_month" name="Total_EMI_per_month" ></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Amount_invested_monthly">Amount Invested Monthly</label></td>
+                        <td><input type="text" id="Amount_invested_monthly" name="Amount_invested_monthly"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Payment_Behaviour">Payment Behaviour</label></td>
+                        <td>
+                            <select id="Payment_Behaviour" name="Payment_Behaviour" >
+                                <option value="" disabled selected>Select Payment Behaviour</option>
+                                <option value="High_spent_Small_value_payments">High Spent, Small Value Payments</option>
+                                <option value="Low_spent_Large_value_payments">Low Spent, Large Value Payments</option>
+                                <option value="Low_spent_Small_value_payments">Low Spent, Large Value Payments</option>
+                                <option value="High_spent_Medium_value_payments">Low Spent, Large Value Payments</option>
+                                <option value="High_spent_Large_value_payments">Low Spent, Large Value Payments</option>
+                                <option value="Low_spent_Medium_value_payments">Low Spent, Large Value Payments</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Monthly_Balance">Monthly Balance</label></td>
+                        <td><input type="text" id="Monthly_Balance" name="Monthly_Balance" ></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button type="submit">Predict Credit Score</button></td>
+                    </tr>
+                </table>
+            </form>
+            <div id="result"></div>
+        </div>
+    
+       
+
+    </script>
+</body>
+</html>
